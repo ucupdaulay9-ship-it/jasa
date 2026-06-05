@@ -1,0 +1,237 @@
+/* ==========================================
+   RESET & VARIABEL WARNA
+   ========================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+html { scroll-behavior: smooth; }
+:root { --brand-green: #16A34A; --logistics-dark: #1E293B; --harvest-gold: #F59E0B; --bg-neutral: #F8FAFC; --text-dark: #0F172A; --text-muted: #64748B; }
+body { background-color: #ffffff; color: var(--text-dark); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; min-height: 80vh; }
+.bg-light { background-color: var(--bg-neutral); }
+
+/* --- HERO SECTION --- */
+.hero-section { width: 100%; height: 110vh; min-height: 110vh; background-image: linear-gradient(rgba(15, 23,  42, 0.3), rgba(15, 23, 42, 0.1)), url('bck1.jpg'); background-size: 100% 100%; background-position: center; position: relative; }
+.logo { position: absolute; top: 30px; left: 40px; max-width: 140px; background: rgba(255, 255, 255, 0.95); padding: 8px 15px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+.welcome-section { padding: 70px 20px 30px 20px; }
+.welcome-title { text-align: center; color: var(--logistics-dark); font-size: 2.8rem; font-weight: 800; margin-bottom: 25px; }
+.welcome-title span { color: var(--brand-green); }
+.welcome-text { text-align: center; max-width: 800px; margin: 0 auto 15px auto; line-height: 1.8; color: var(--text-muted); }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+.feature-card { text-align: center; padding: 30px 20px; background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); transition: 0.3s; border-top: 4px solid var(--brand-green); }
+.features-grid .feature-card:nth-child(even) { border-top: 4px solid var(--harvest-gold); }
+.feature-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(15, 23, 42, 0.1); }
+.feature-card .icon-wrapper { font-size: 50px; color: var(--logistics-dark); margin-bottom: 15px; }
+.feature-card h3 { color: var(--logistics-dark); font-size: 1.2rem; margin-bottom: 12px; }
+
+/* --- TOKO (PRODUK SAYURAN) --- */
+.section-title { text-align: center; color: var(--logistics-dark); font-size: 2.2rem; margin-bottom: 40px; }
+.kategori-title { margin: 40px 0 20px 0; color: var(--logistics-dark); font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.kategori-title::before { content: ''; display: inline-block; width: 6px; height: 22px; background-color: var(--harvest-gold); border-radius: 3px; }
+.produk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.kartu-produk { background: #ffffff; border: 1px solid #E2E8F0; padding: 20px; border-radius: 16px; text-align: center; transition: 0.3s; }
+.kartu-produk:hover { border-color: var(--brand-green); box-shadow: 0 8px 20px rgba(22, 163, 74, 0.1); }
+.img-produk { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #E2E8F0; }
+.kartu-produk h4 { font-size: 1.25rem; margin-bottom: 10px;}
+.kartu-produk .desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; min-height: 40px; }
+.kartu-produk .harga { font-weight: 700; color: var(--brand-green); font-size: 1.15rem; }
+.action-buttons { display: flex; gap: 8px; margin-top: 15px; }
+.action-buttons button { padding: 10px 5px; font-size: 0.85rem; border-radius: 6px; cursor: pointer; transition: 0.2s; font-weight: bold; }
+.btn-keranjang { background: transparent; color: var(--harvest-gold); border: 2px solid var(--harvest-gold); flex: 1; }
+.btn-keranjang:hover { background: var(--harvest-gold); color: white; }
+.btn-pesan { background: var(--harvest-gold); color: white; border: 2px solid var(--harvest-gold); flex: 1; }
+.btn-pesan:hover { background: #D97706; border-color: #D97706; }
+
+/* --- MAP & FORM PENCARIAN --- */
+.panel-rute-map { background: #ffffff; border: 1px solid #E2E8F0; border-radius: 16px; padding: 25px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05); }
+.panel-rute-map h4 { color: var(--logistics-dark); font-size: 1.2rem; margin-bottom: 15px; }
+.form-pencarian-rute { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.kotak-input-cari { display: flex; align-items: center; position: relative; width: 100%; }
+.kotak-input-cari i { position: absolute; left: 15px; font-size: 1.2rem; }
+.kotak-input-cari input { width: 100%; padding: 14px 100px 14px 45px; border: 2px solid #E2E8F0; border-radius: 10px; font-size: 0.95rem; outline: none; transition: 0.2s; }
+.kotak-input-cari input:focus { border-color: var(--brand-green); }
+.kotak-input-cari button { position: absolute; right: 6px; width: 80px; padding: 9px 0; font-size: 0.85rem; background-color: var(--logistics-dark); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.kotak-input-cari button:hover { background-color: var(--brand-green); }
+#map-interaktif { width: 100%; height: 420px; border-radius: 12px; border: 1px solid #CBD5E1; z-index: 10; }
+.hasil-rute { margin-top: 15px; padding-top: 15px; border-top: 1px dashed #E2E8F0; text-align: right; }
+#global-teks-jarak { color: var(--brand-green); font-size: 1.3rem; font-weight: 800; }
+
+/* --- JASA GRID --- */
+.jasa-grid { display: flex; flex-direction: column; gap: 25px; }
+.kartu-jasa { display: flex; background: #ffffff; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(30, 41, 59, 0.03); transition: 0.3s; }
+.kartu-jasa:hover { transform: translateX(5px); box-shadow: 0 8px 25px rgba(30, 41, 59, 0.08); border-color: var(--brand-green); }
+.kartu-jasa img { width: 30%; min-width: 220px; object-fit: cover; }
+.jasa-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.jasa-info h4 { font-size: 1.35rem; color: var(--logistics-dark); margin-bottom: 15px; }
+.jasa-spek { list-style: none; margin-bottom: 15px; }
+.jasa-spek li { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 8px; display: flex; align-items: center; gap: 12px; }
+.jasa-spek li i { color: var(--brand-green); width: 18px; text-align: center; }
+.jasa-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #F1F5F9; }
+.estimasi-item { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; }
+.estimasi-item span { display: block; font-size: 1.4rem; font-weight: 800; color: var(--logistics-dark); }
+.waktu-highlight { color: var(--harvest-gold) !important; font-size: 1.1rem !important; }
+.btn-pesan-jasa { background: var(--logistics-dark); color: white; border: none; padding: 14px 25px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-pesan-jasa:hover { background: var(--harvest-gold); transform: translateY(-2px); }
+
+/* --- KERANJANG MODAL DINAMIS --- */
+.cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.6); z-index: 2001; display: none; opacity: 0; transition: 0.3s; }
+.cart-overlay.active { display: block; opacity: 1; }
+.cart-modal { position: fixed; top: 0; right: -100%; width: 100%; max-width: 420px; height: 100vh; background: #fff; z-index: 2002; transition: 0.3s; display: flex; flex-direction: column; box-shadow: -5px 0 25px rgba(0,0,0,0.15); }
+.cart-modal.active { right: 0; }
+.cart-header { padding: 20px; background: var(--logistics-dark); color: white; display: flex; justify-content: space-between; align-items: center; }
+.close-btn { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+.cart-body { padding: 20px; flex-grow: 1; overflow-y: auto; }
+.item-keranjang-dinamis { display: flex; flex-direction: column; gap: 10px; padding: 15px 0; border-bottom: 1px dashed #E2E8F0; }
+.item-keranjang-dinamis .info-atas { display: flex; justify-content: space-between; font-size: 0.95rem; font-weight: bold; color: var(--logistics-dark); }
+.item-keranjang-dinamis .info-bawah { display: flex; justify-content: space-between; align-items: center; }
+.info-bawah .harga-subtotal { color: var(--brand-green); font-weight: bold; font-size: 1.1rem; }
+.kontrol-kuantitas { display: flex; align-items: center; gap: 15px; }
+.btn-qty { background: #F1F5F9; border: 1px solid #CBD5E1; color: var(--logistics-dark); width: 30px; height: 30px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-qty:hover { background: #E2E8F0; }
+.angka-qty { font-weight: bold; font-size: 1rem; width: 20px; text-align: center; }
+.btn-hapus { background: transparent; border: none; color: #EF4444; font-size: 1.1rem; cursor: pointer; transition: 0.2s; }
+.btn-hapus:hover { color: #B91C1C; transform: scale(1.1); }
+.cart-footer { padding: 20px; border-top: 1px solid #E2E8F0; background: var(--bg-neutral); }
+.total-keranjang-modal { font-size: 1.2rem; font-weight: 700; color: var(--logistics-dark); margin-bottom: 15px; display: flex; justify-content: space-between; }
+.btn-checkout-modal { background: var(--brand-green); color: white; padding: 15px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; width: 100%; font-size: 1.1rem; }
+
+/* --- MODAL FORMULIR CHECKOUT (POP-UP HIDDEN) --- */
+.payment-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,23,42,0.6); z-index: 3001; display: none; opacity: 0; transition: 0.3s; }
+.payment-overlay.active { display: block; opacity: 1; }
+.payment-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); width: 90%; max-width: 450px; background: #fff; border-radius: 16px; z-index: 3002; display: none; flex-direction: column; transition: 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.payment-modal.active { display: flex; transform: translate(-50%, -50%) scale(1); }
+.payment-header { background: var(--logistics-dark); color: #fff; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; }
+.payment-body { padding: 20px; max-height: 75vh; overflow-y: auto; }
+
+.form-input-grup { display: flex; flex-direction: column; margin-bottom: 15px; }
+.form-input-grup label { font-size: 0.85rem; font-weight: bold; color: var(--logistics-dark); margin-bottom: 6px; }
+.form-input-grup input, .form-input-grup textarea, .form-input-grup select { width: 100%; padding: 12px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; outline: none; background: #F8FAFC; transition: 0.2s; }
+.form-input-grup input:focus, .form-input-grup textarea:focus, .form-input-grup select:focus { border-color: var(--brand-green); background: #ffffff; }
+.invoice-mini { background: #F8FAFC; padding: 15px; border-radius: 12px; border: 1px solid #E2E8F0; margin-bottom: 20px; }
+.invoice-row { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 6px; color: #64748B; }
+.total-row span:last-child { font-size: 1.4rem; font-weight: 800; color: var(--brand-green); }
+.method-option { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border: 1px solid #E2E8F0; border-radius: 12px; margin-bottom: 10px; cursor: pointer; }
+.method-option:has(input[type="radio"]:checked) { border-color: var(--brand-green); background: #F0FDF4; }
+.method-details { display: flex; align-items: center; gap: 15px; }
+.method-details i { font-size: 1.4rem; color: var(--logistics-dark); width: 25px; }
+.method-option input[type="radio"]:checked + .method-details i { color: var(--brand-green); }
+.payment-footer { padding: 15px 20px; border-top: 1px solid #E2E8F0; }
+
+/* --- TAB PESANAN SAYA --- */
+.tab-pesanan { display: flex; border-bottom: 1px solid #E2E8F0; background: white;}
+.tab-btn { flex: 1; padding: 16px; background: transparent; border: none; font-weight: bold; color: #94A3B8; cursor: pointer; border-bottom: 3px solid transparent; transition: 0.2s; font-size: 1rem;}
+.tab-btn.active { color: var(--brand-green); border-bottom-color: var(--brand-green); background: #F0FDF4;}
+.kartu-riwayat { background: white; padding: 16px; border-radius: 12px; border: 1px solid #E2E8F0; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+.kartu-riwayat-header { display: flex; justify-content: space-between; border-bottom: 1px dashed #E2E8F0; padding-bottom: 12px; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-muted); }
+.status-badge { background: #FEF3C7; color: #D97706; padding: 4px 10px; border-radius: 20px; font-weight: bold; font-size: 0.75rem; }
+.kartu-riwayat-body { font-size: 0.9rem; color: var(--logistics-dark); margin-bottom: 12px; line-height: 1.5; }
+.kartu-riwayat-footer { display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--logistics-dark); }
+.kartu-riwayat-footer span { color: var(--brand-green); font-size: 1.15rem;}
+
+/* --- DESIGN TOAST NOTIFIKASI ELEGAN (BARU) --- */
+#toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+.toast { background: white; color: var(--text-dark); padding: 16px 24px; border-radius: 12px; box-shadow: 0 10px 25px rgba(15,23,42,0.15); display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.95rem; border-left: 5px solid var(--brand-green); transform: translateX(120%); transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); opacity: 0; pointer-events: auto; }
+.toast.show { transform: translateX(0); opacity: 1; }
+.toast.info { border-left-color: var(--harvest-gold); }
+.toast i { font-size: 1.25rem; }
+.toast.success i { color: var(--brand-green); }
+.toast.info i { color: var(--harvest-gold); }
+
+/* --- DESIGN CUSTOM NOTA TRANSAKSI BERHASIL (BARU) --- */
+.success-modal-card { text-align: center; padding: 35px 25px !important; max-width: 420px; }
+.success-icon-wrapper { font-size: 5rem; color: var(--brand-green); margin-bottom: 15px; animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.success-modal-card h2 { color: var(--logistics-dark); font-weight: 800; margin-bottom: 8px; font-size: 1.6rem; }
+.success-subtitle { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.4; }
+.invoice-success-box { background: var(--bg-neutral); border: 1px dashed #CBD5E1; border-radius: 12px; padding: 15px; text-align: left; font-size: 0.9rem; }
+.invoice-success-box h4 { color: var(--logistics-dark); margin-bottom: 10px; border-bottom: 1px solid #E2E8F0; padding-bottom: 6px; font-weight: 700; }
+@keyframes scaleUp { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+/* --- FOOTER CARD & FOOTER NAV --- */
+.kartu-review { background: #fff; padding: 30px; border-radius: 16px; border: 1px solid #E2E8F0; margin-bottom: 15px; }
+.bintang { color: var(--harvest-gold); margin-bottom: 12px; }
+.center-text { text-align: center; }
+.sosmed-links { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+.btn-sosmed { text-decoration: none; color: white; padding: 14px 25px; border-radius: 8px; font-weight: bold; width: 160px; text-align: center; }
+.wa { background-color: #25D366; } .ig { background-color: #E1306C; } .tiktok { background-color: #000000; }
+
+.footer-nav { position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--logistics-dark); display: flex; justify-content: space-around; padding: 12px 0; z-index: 2000; box-shadow: 0 -4px 15px rgba(0,0,0,0.15); }
+.footer-nav a { color: #94A3B8; text-decoration: none; font-size: 10px; text-align: center; display: flex; flex-direction: column; gap: 5px; flex: 1; align-items: center; }
+.footer-nav a i { font-size: 18px; }
+.footer-nav a:hover { color: var(--harvest-gold); }
+
+@media (max-width: 768px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .kartu-jasa { flex-direction: column; }
+    .kartu-jasa img { width: 100%; height: 180px; }
+    .jasa-footer { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .btn-pesan-jasa { width: 100%; }
+    .footer-nav a span { font-size: 9px; }
+    #toast-container { left: 20px; right: 20px; top: 15px; } /* Toast melebar di HP */
+}
+
+/* =========================================================
+   PERBAIKAN DESAIN TOMBOL CHECKOUT & MODAL (POSISI TENGAH)
+   ========================================================= */
+
+/* 1. Wadah pembungkus tombol agar isinya ke tengah */
+.payment-footer {
+    padding: 20px;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: center; /* Memaksa tombol ke tengah horizontal */
+    align-items: center;
+    width: 100%;
+}
+
+/* 2. Tombol Aksi Utama (Checkout Belanja & Pesan Driver) */
+.btn-konfirmasi-payment {
+    background: linear-gradient(135deg, var(--brand-green), #15803d); /* Gradasi hijau modern */
+    color: white;
+    width: 100%;
+    max-width: 350px; /* Lebar ideal, tidak terlalu melar */
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3); /* Efek cahaya bayangan */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Jarak ikon dan teks */
+}
+
+/* Efek saat tombol utama disentuh/di-hover */
+.btn-konfirmasi-payment:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+    background: linear-gradient(135deg, #15803d, #166534);
+}
+
+/* 3. Tombol Sekunder (Untuk "Selesai & Tutup" di nota sukses) */
+.btn-selesai-tutup {
+    background: #F8FAFC;
+    color: var(--logistics-dark);
+    width: 100%;
+    max-width: 250px; /* Lebih kecil dari tombol utama */
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid #CBD5E1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Posisi mutlak di tengah */
+}
+
+/* Efek saat tombol tutup disentuh/di-hover */
+.btn-selesai-tutup:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+    border-color: #94A3B8;
+}
+

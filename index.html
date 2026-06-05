@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaniGo - Logistik & Hasil Bumi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="beranda">
+        <header class="hero-section">
+            <img src="https://via.placeholder.com/150x50?text=LOGO+TANIGO" alt="Logo TaniGo" class="logo">
+        </header>
+
+        <section class="welcome-section container">
+            <h1 class="welcome-title">Welcome To <span>TaniGo</span></h1>
+            <p class="welcome-text">TaniGo adalah layanan distribusi hasil pertanian yang membantu petani mengirim buah dan sayur segar langsung ke pedagang pasar tradisional, warung, rumah makan, dan UMKM.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-clipboard-list"></i></div><h3>Distribusi Buah dan Sayuran</h3><p>Pengiriman buah dan sayuran dari petani ke pasar tradisional, warung, dan UMKM.</p></div>
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-house-chimney-window"></i></div><h3>Pasokan Harian</h3><p>Menyediakan berbagai jenis buah dan sayuran segar setiap hari.</p></div>
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-certificate"></i></div><h3>Kualitas Terjamin</h3><p>Buah dan Sayuran segar pilihan dari petani dengan kualitas terbaik.</p></div>
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>Pengiriman Cepat</h3><p>Pengiriman tepat waktu setiap hari agar sayuran sampai tetap segar.</p></div>
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-laptop-code"></i></div><h3>Mudah Dipesan</h3><p>Pesanan mudah melalui WhatsApp dan siap melayani setiap hari.</p></div>
+                <div class="feature-card"><div class="icon-wrapper"><i class="fa-solid fa-handshake-angle"></i></div><h3>Mitra Terpercaya</h3><p>Kami berkomitmen menjadi partner terbaik untuk petani dan pedagang.</p></div>
+            </div>
+        </section>
+    </div>
+
+    <section id="toko" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Katalog Produk & Jasa</h2>
+            
+            <h3 class="kategori-title">Hasil Pertanian</h3>
+            <div class="produk-grid">
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=600&auto=format&fit=crop" alt="Sayur Kol" class="img-produk"><h4>Sayur Kol Segar</h4><p class="desc">Dipanen langsung di pagi hari, sangat renyah dan padat.</p><p class="harga">Rp 12.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Sayur Kol Segar', 12000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Sayur Kol Segar', 12000)">Beli Sekarang</button></div></div>
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Tomat Merah" class="img-produk"><h4>Tomat Merah</h4><p class="desc">Tomat kualitas super, merah merata dan kaya air.</p><p class="harga">Rp 18.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Tomat Merah', 18000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Tomat Merah', 18000)">Beli Sekarang</button></div></div>
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1584347514336-669c5e2ef72a?q=80&w=600&auto=format&fit=crop" alt="Cabai Merah" class="img-produk"><h4>Cabai Merah Keriting</h4><p class="desc">Tingkat kepedasan tinggi, cocok untuk bumbu masakan.</p><p class="harga">Rp 45.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Cabai Merah Keriting', 45000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Cabai Merah Keriting', 45000)">Beli Sekarang</button></div></div>
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?q=80&w=600&auto=format&fit=crop" alt="Bawang Merah" class="img-produk"><h4>Bawang Merah Samosir</h4><p class="desc">Bawang merah pilihan kering, aroma kuat dan tahan lama.</p><p class="harga">Rp 32.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Bawang Merah Samosir', 32000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Bawang Merah Samosir', 32000)">Beli Sekarang</button></div></div>
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=600&auto=format&fit=crop" alt="Wortel" class="img-produk"><h4>Wortel Manis Berastagi</h4><p class="desc">Wortel segar tanpa tanah, kaya vitamin A & manis alami.</p><p class="harga">Rp 14.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Wortel Manis Berastagi', 14000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Wortel Manis Berastagi', 14000)">Beli Sekarang</button></div></div>
+                <div class="kartu-produk"><img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=600&auto=format&fit=crop" alt="Kentang" class="img-produk"><h4>Kentang Dieng Super</h4><p class="desc">Kentang ukuran besar, tekstur sangat lembut saat dimasak.</p><p class="harga">Rp 20.000 / kg</p><div class="action-buttons"><button class="btn-keranjang" onclick="tambahKeKeranjang('Kentang Dieng Super', 20000)"><i class="fa-solid fa-cart-plus"></i> Keranjang</button><button class="btn-pesan" onclick="beliSekarang('Kentang Dieng Super', 20000)">Beli Sekarang</button></div></div>
+            </div>
+
+            <h3 class="kategori-title" style="margin-top: 60px;">Jasa Pengiriman & Ekspedisi</h3>
+            
+            <div class="panel-rute-map">
+                <h4><i class="fa-solid fa-map-location-dot"></i> Cari Lokasi A (Jemput) & Lokasi B (Tujuan)</h4>
+                <div class="form-pencarian-rute">
+                    <div class="kotak-input-cari">
+                        <i class="fa-solid fa-circle-dot" style="color: #3B82F6;"></i>
+                        <input type="text" id="alamat-jemput" placeholder="Ketik alamat penjemputan (Contoh: Lhokseumawe)...">
+                        <button type="button" onclick="cariLokasi('jemput')"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
+                    </div>
+                    <div class="kotak-input-cari">
+                        <i class="fa-solid fa-location-pin" style="color: #EF4444;"></i>
+                        <input type="text" id="alamat-tujuan" placeholder="Ketik alamat tujuan (Contoh: Bireuen)...">
+                        <button type="button" onclick="cariLokasi('tujuan')"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: #EF4444; margin-bottom: 15px;">
+                    *Jika pencarian rute macet, Anda tetap bisa menyeret Pin Biru (Jemput) dan Pin Merah (Tujuan) manual pada peta!
+                </p>
+
+                <div id="map-interaktif"></div>
+                <div class="hasil-rute"><p>Jarak Estimasi: <strong id="global-teks-jarak">0 km</strong></p></div>
+            </div>
+
+            <div class="jasa-grid">
+                <div class="kartu-jasa"><img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=600&auto=format&fit=crop" alt="Mobil Pickup"><div class="jasa-info"><h4>Sewa Mobil Pick-up</h4><ul class="jasa-spek"><li><i class="fa-solid fa-weight-hanging"></i> <strong>Muatan:</strong> Maks 1 Ton</li><li><i class="fa-solid fa-temperature-half"></i> <strong>Suhu:</strong> Ruang Terbuka</li></ul><div class="jasa-footer"><div class="estimasi-ringkasan"><p class="estimasi-item">Tarif: <span id="tarif-pickup">Rp 0</span></p><p class="estimasi-item">Waktu: <span id="waktu-pickup" class="waktu-highlight">0 menit</span></p></div><button class="btn-pesan-jasa" onclick="bukaPembayaranJasa('Sewa Mobil Pick-up', 100000, 5000)"><i class="fa-solid fa-wallet"></i> Pesan</button></div></div></div>
+                <div class="kartu-jasa"><img src="https://images.unsplash.com/photo-1626244697920-436f560e90e7?q=80&w=600&auto=format&fit=crop" alt="Mobil Box"><div class="jasa-info"><h4>Sewa Mobil Box</h4><ul class="jasa-spek"><li><i class="fa-solid fa-weight-hanging"></i> <strong>Muatan:</strong> Maks 2 Ton</li><li><i class="fa-solid fa-temperature-half"></i> <strong>Suhu:</strong> Kedap Udara</li></ul><div class="jasa-footer"><div class="estimasi-ringkasan"><p class="estimasi-item">Tarif: <span id="tarif-box">Rp 0</span></p><p class="estimasi-item">Waktu: <span id="waktu-box" class="waktu-highlight">0 menit</span></p></div><button class="btn-pesan-jasa" onclick="bukaPembayaranJasa('Sewa Mobil Box', 150000, 7000)"><i class="fa-solid fa-wallet"></i> Pesan</button></div></div></div>
+                <div class="kartu-jasa"><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=600&auto=format&fit=crop" alt="Truk Bak"><div class="jasa-info"><h4>Sewa Truk Bak Besar</h4><ul class="jasa-spek"><li><i class="fa-solid fa-weight-hanging"></i> <strong>Muatan:</strong> Maks 5 Ton</li><li><i class="fa-solid fa-temperature-half"></i> <strong>Suhu:</strong> Sirkulasi Terbuka</li></ul><div class="jasa-footer"><div class="estimasi-ringkasan"><p class="estimasi-item">Tarif: <span id="tarif-truk">Rp 0</span></p><p class="estimasi-item">Waktu: <span id="waktu-truk" class="waktu-highlight">0 menit</span></p></div><button class="btn-pesan-jasa" onclick="bukaPembayaranJasa('Sewa Truk Bak Besar', 300000, 15000)"><i class="fa-solid fa-wallet"></i> Pesan</button></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="penilaian" class="section">
+        <div class="container">
+            <h2 class="section-title">Penilaian Pelanggan</h2>
+            <div class="review-grid">
+                <div class="kartu-review"><p class="bintang">⭐⭐⭐⭐⭐</p><p>"Armada bersih, supir ramah, hitungan jarak sangat fair."</p><small>- Budi, Restoran</small></div>
+                <div class="kartu-review"><p class="bintang">⭐⭐⭐⭐⭐</p><p>"Sewa truk bak harganya transparan, pesanan sayur juga segar."</p><small>- Siti, Pengepul Padi</small></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="section bg-light" style="padding-bottom: 140px;">
+        <div class="container center-text">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="sosmed-links">
+                <a href="#" class="btn-sosmed wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" class="btn-sosmed ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="#" class="btn-sosmed tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="toast-container"></div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="tutupKeranjang()"></div>
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-header"><h2><i class="fa-solid fa-cart-shopping"></i> Keranjang Saya</h2><button class="close-btn" onclick="tutupKeranjang()"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="cart-body" id="daftar-keranjang-modal"><p style="text-align: center; color: #94A3B8; margin-top: 20px;">Keranjang kosong</p></div>
+        <div class="cart-footer">
+            <div class="total-keranjang-modal">Total: <span id="total-harga-modal">Rp 0</span></div>
+            <button class="btn-checkout-modal" onclick="bukaCheckoutProduk()"><i class="fa-solid fa-arrow-right"></i> Lanjut Checkout</button>
+        </div>
+    </div>
+
+    <div class="payment-overlay" id="checkout-produk-overlay" onclick="tutupCheckoutProduk()"></div>
+    <div class="payment-modal" id="checkout-produk-modal">
+        <div class="payment-header"><h2><i class="fa-solid fa-box"></i> Checkout Belanja</h2><button class="close-btn" onclick="tutupCheckoutProduk()"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="payment-body">
+            <div class="form-input-grup"><label>Nama Penerima:</label><input type="text" id="co-produk-nama" placeholder="Ketik nama lengkap Anda"></div>
+            <div class="form-input-grup"><label>No HP Aktif:</label><input type="number" id="co-produk-hp" placeholder="Contoh: 0812..."></div>
+            <div class="form-input-grup"><label>Alamat Pengiriman:</label><textarea id="co-produk-alamat" rows="2" placeholder="Nama jalan, RT/RW..."></textarea></div>
+            <div class="form-input-grup"><label>Pilih Armada Pengiriman:</label>
+                <select id="co-produk-armada">
+                    <option value="Mobil Pick-up">Mobil Pick-up (Min 50Kg)</option>
+                    <option value="Mobil Box">Mobil Box (Min 300Kg)</option>
+                    <option value="Truk Bak">Truk Bak Besar (Min 1 Ton)</option>
+                </select>
+            </div>
+            <div class="payment-methods" style="margin-top: 20px;">
+                <h3 style="font-size: 0.95rem; margin-bottom: 10px;">Metode Pembayaran:</h3>
+                <label class="method-option"><input type="radio" name="metode-produk" value="Transfer Bank" checked><div class="method-details"><i class="fa-solid fa-bank"></i><div><strong>Transfer Bank</strong></div></div></label>
+                <label class="method-option"><input type="radio" name="metode-produk" value="QRIS"><div class="method-details"><i class="fa-solid fa-qrcode"></i><div><strong>QRIS / E-Wallet</strong></div></div></label>
+                <label class="method-option"><input type="radio" name="metode-produk" value="COD"><div class="method-details"><i class="fa-solid fa-money-bill-wave"></i><div><strong>COD (Bayar Tunai)</strong></div></div></label>
+            </div>
+            <div class="invoice-mini" style="margin-top: 15px;"><div class="invoice-row total-row"><span>Total Tagihan:</span> <span id="co-produk-total-bayar">Rp 0</span></div></div>
+        </div>
+        <div class="payment-footer"><button class="btn-konfirmasi-payment" onclick="prosesCheckoutSayur()"><i class="fa-solid fa-circle-check"></i> Selesaikan Pesanan</button></div>
+    </div>
+
+    <div class="payment-overlay" id="payment-overlay" onclick="tutupPembayaranJasa()"></div>
+    <div class="payment-modal" id="payment-modal">
+        <div class="payment-header"><h2><i class="fa-solid fa-receipt"></i> Order Jasa Logistik</h2><button class="close-btn" onclick="tutupPembayaranJasa()"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="payment-body">
+            <div class="form-input-grup"><label>Nama Pemesan:</label><input type="text" id="jasa-nama-pemesan" placeholder="Ketik nama Anda"></div>
+            <div class="form-input-grup" style="margin-bottom: 20px;"><label>No HP Aktif:</label><input type="number" id="jasa-hp-pemesan" placeholder="Contoh: 0812..."></div>
+            <div class="invoice-mini">
+                <h4 id="pay-nama-jasa">Nama Layanan</h4>
+                <div class="invoice-row"><span>Jarak Tempuh:</span> <strong id="pay-jarak">0 km</strong></div>
+                <div class="invoice-row"><span>Waktu Tiba:</span> <strong id="pay-waktu" style="color: #F59E0B;">0 menit</strong></div>
+                <hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 10px 0;">
+                <div class="invoice-row total-row"><span>Total Biaya:</span> <span id="pay-total-harga">Rp 0</span></div>
+            </div>
+            <div class="payment-methods">
+                <h3 style="font-size: 0.95rem; margin-bottom: 10px;">Metode Pembayaran:</h3>
+                <label class="method-option"><input type="radio" name="metode-opsi" value="Transfer Bank" checked><div class="method-details"><i class="fa-solid fa-bank"></i><div><strong>Transfer Bank</strong></div></div></label>
+                <label class="method-option"><input type="radio" name="metode-opsi" value="QRIS"><div class="method-details"><i class="fa-solid fa-qrcode"></i><div><strong>QRIS / E-Wallet</strong></div></div></label>
+                <label class="method-option"><input type="radio" name="metode-opsi" value="COD"><div class="method-details"><i class="fa-solid fa-money-bill-wave"></i><div><strong>COD (Bayar Tunai)</strong></div></div></label>
+            </div>
+        </div>
+        <div class="payment-footer"><button class="btn-konfirmasi-payment" onclick="prosesPembayaranLangsung()"><i class="fa-solid fa-circle-check"></i> Pesan Driver Sekarang</button></div>
+    </div>
+
+    <div class="cart-overlay" id="riwayat-overlay" onclick="tutupPesananSaya()"></div>
+    <div class="cart-modal" id="riwayat-modal" style="max-width: 480px;">
+        <div class="cart-header"><h2><i class="fa-solid fa-clipboard-list"></i> Pesanan Saya</h2><button class="close-btn" onclick="tutupPesananSaya()"><i class="fa-solid fa-xmark"></i></button></div>
+        <div class="tab-pesanan">
+            <button class="tab-btn active" id="tab-produk-btn" onclick="gantiTabPesanan('produk')">Produk Tani</button>
+            <button class="tab-btn" id="tab-jasa-btn" onclick="gantiTabPesanan('jasa')">Jasa Logistik</button>
+        </div>
+        <div class="cart-body" style="background: var(--bg-neutral);">
+            <div id="konten-riwayat-produk"><p style="text-align: center; color: #94A3B8; margin-top: 20px;">Belum ada pesanan produk.</p></div>
+            <div id="konten-riwayat-jasa" style="display: none;"><p style="text-align: center; color: #94A3B8; margin-top: 20px;">Belum ada pesanan jasa.</p></div>
+        </div>
+    </div>
+
+    <div class="payment-overlay" id="success-overlay" onclick="tutupSuccessModal()"></div>
+    <div class="payment-modal success-modal-card" id="success-modal">
+        <div class="success-icon-wrapper">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>Transaksi Berhasil!</h2>
+        <p class="success-subtitle">Pesanan Anda telah tercatat ke dalam sistem TaniGo dan siap diproses.</p>
+        
+        <div id="success-details-box"></div>
+        
+        <div class="payment-footer" style="border:none; margin-top:15px;">
+            <button class="btn-konfirmasi-payment" onclick="tutupSuccessModal()"><i class="fa-solid fa-check"></i> Selesai & Tutup</button>
+        </div>
+    </div>
+
+    <nav class="footer-nav">
+        <a href="#beranda"><i class="fa-solid fa-house"></i> <span>Beranda</span></a>
+        <a href="#toko"><i class="fa-solid fa-store"></i> <span>Toko</span></a>
+        <a href="#penilaian"><i class="fa-solid fa-star"></i> <span>Penilaian</span></a>
+        <a href="#kontak"><i class="fa-solid fa-phone"></i> <span>Kontak</span></a>
+        <a href="javascript:void(0)" onclick="bukaKeranjang()"><i class="fa-solid fa-cart-shopping"></i> <span>Keranjang</span></a>
+        <a href="javascript:void(0)" onclick="bukaPesananSaya()"><i class="fa-solid fa-receipt"></i> <span>Pesanan Saya</span></a>
+    </nav>
+    
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
